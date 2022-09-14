@@ -1,2 +1,2 @@
 # Calculadora
- Calculadora programada na linguagem C
+ Calculadora programada na linguagem C.
