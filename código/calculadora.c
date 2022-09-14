@@ -6,7 +6,6 @@ int result;
 
 int main(){
     int operator;
-    int result;
     operators_menu();
     scanf("%d", &operator);
     printf("%d\n", calculator(operator));
@@ -35,7 +34,7 @@ int calculator(int operator){
             division();
             break;
         case 5:
-            pow();
+            pow1();
             break;
         case 6:
             factorial();
@@ -43,12 +42,13 @@ int calculator(int operator){
         case 7:
             modulus();
             break;
-        case 8:
-            squareroot();
-            break;  
         default:
-            printf("Operador não encontrado\n");
-            break;
+            if(operator!=0){
+                printf("Operador não encontrado\n");
+                break;
+            }
+            else
+                break;   
     }
 }
 
@@ -85,16 +85,15 @@ int multiplication(){
     return a * b;
 }
 
-float division(){
+int division(){
     printf("Digite os dois numeros que voce quer dividir: \n");
-    float a,b;
-    scanf("%f %f", &a, &b);
-    float result;
+    int a,b;
+    scanf("%d %d", &a, &b);
     result = a/b; 
     return result;
 }
 
-int pow(){
+int pow1(){
     printf("Digite a base e o expoente: \n");
     int a,b;
     scanf("%d %d", &a, &b);
@@ -121,13 +120,5 @@ int modulus(){
     int a,b;
     scanf("%d %d", &a, &b);
     result = a % b;
-    return result;
-}
-
-int squareroot(){
-    double x;
-    printf("Digite o numero que voce quer ver a raiz quadrada: \n");
-    scanf("%l", &x);
-    result = sqrt(x);
     return result;
 }
