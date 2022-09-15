@@ -12,7 +12,8 @@ int main(){
     while(operator!=0){
         operators_menu();
         scanf("%d", &operator);
-        printf("%d\n", calculator(operator));
+        calculator(operator);
+        printf("\n");
     }
     return 0;
 }
@@ -53,6 +54,8 @@ int calculator(int operator){
 }
 
 void operators_menu(){
+    printf("\n---------- CALCULADORA ----------");
+    printf("\n");
     printf("[1] - soma\n");
     printf("[2] - subtração\n");
     printf("[3] - multiplicação\n");
@@ -60,65 +63,64 @@ void operators_menu(){
     printf("[5] - potencia\n");
     printf("[6] - fatorial\n");
     printf("[7] - módulo(resto da divisão)\n");
-    printf("[8] - raiz quadrada\n");
     printf("[0] - Encerrar Programa\n");
+    printf("------------------------------------\n\n");
 }
 
-int addition(){
+void addition(){
     int a, b;
     printf("Digite dois numeros para serem somados: \n");
     scanf("%d %d", &a, &b);
-    return a + b;
+    printf("O resultado e: %d\n", a + b);
 }
 
-int subtraction(){
+void subtraction(){
     int a, b;
     printf("Digite dois numeros que voce quer subtrair: \n");
     scanf("%d %d", &a, &b);
-    return a - b;
+    printf("O resultado e: %d\n", a-b);
 }
 
-int multiplication(){
+void multiplication(){
     printf("Digite dois numeros que voce quer multiplicar: \n");
     int a,b;
     scanf("%d %d", &a, &b);
-    return a * b;
+    printf("O resultado e: %d\n", a*b);
 }
 
-int division(){
+void division(){
     printf("Digite os dois numeros que voce quer dividir: \n");
-    int a,b;
-    scanf("%d %d", &a, &b);
-    result = a/b; 
-    return result;
+    float a,b;
+    scanf("%f %f", &a, &b);
+    printf("O resultado e: %0.2f\n", a/b);
 }
 
-int pow1(){
+void pow1(){
     printf("Digite a base e o expoente: \n");
     int a,b;
     scanf("%d %d", &a, &b);
-    int i;
-    result = a;
-    for(i=1; i<=b; i++){
-        result = result * a;
+    int potencia = a;
+    for(int i=1; i<b; i++){
+        potencia = potencia * a;
     }
-    return result;
+    printf("O resultado e: %d\n", potencia);
 }
 
-int factorial(){
+void factorial(){
     printf("Digite o numero que voce quer o fatorial: \n");
     int a, i;
-    result = 1;
-    for(i=1;i<=a;i++){
-        result = result * i;
+    int fatorial = 1;
+    scanf("%d", &a);
+    for(i=a; i>=1; i--){
+        fatorial*=i;
     }
-    return result;
+    printf("O resultado e: %d\n", fatorial);
 }
 
-int modulus(){
+void modulus(){
     printf("Digite dois numeros para ver o resto da divisao: \n");
     int a,b;
     scanf("%d %d", &a, &b);
     result = a % b;
-    return result;
+    printf("O resultado e: %d\n", result);
 }
